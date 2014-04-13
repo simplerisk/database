@@ -26,14 +26,14 @@ CREATE TABLE IF NOT EXISTS `category` (
 --
 
 INSERT INTO `category` (`value`, `name`) VALUES
-(1, 'Access Management'),
-(2, 'Environmental Resilience'),
-(3, 'Monitoring'),
-(4, 'Physical Security'),
-(5, 'Policy and Procedure'),
-(6, 'Sensitive Data Management'),
-(7, 'Technical Vulnerability Management'),
-(8, 'Third-Party Management');
+(1, 'Acesso'),
+(2, 'Ambiental'),
+(3, 'Monitoração'),
+(4, 'Segurança Física'),
+(5, 'Política e Procedimento'),
+(6, 'Dados Sensíveis'),
+(7, 'Vulnerabilidades'),
+(8, 'Terceiros');
 
 -- --------------------------------------------------------
 
@@ -52,10 +52,10 @@ CREATE TABLE IF NOT EXISTS `close_reason` (
 --
 
 INSERT INTO `close_reason` (`value`, `name`) VALUES
-(1, 'Fully Mitigated'),
-(2, 'System Retired'),
-(3, 'Cancelled'),
-(4, 'Too Insignificant');
+(1, 'Totalmente Mitigada'),
+(2, 'Sistema Removido'),
+(3, 'Cancelado'),
+(4, 'Muito Insignificante');
 
 -- --------------------------------------------------------
 
@@ -109,61 +109,61 @@ CREATE TABLE IF NOT EXISTS `CVSS_scoring` (
 --
 
 INSERT INTO `CVSS_scoring` (`id`, `metric_name`, `abrv_metric_name`, `metric_value`, `abrv_metric_value`, `numeric_value`) VALUES
-(1, 'AccessComplexity', 'AC', 'High', 'H', 0.35),
-(2, 'AccessComplexity', 'AC', 'Medium', 'M', 0.61),
-(3, 'AccessComplexity', 'AC', 'Low', 'L', 0.71),
+(1, 'AccessComplexity', 'AC', 'Alto', 'H', 0.35),
+(2, 'AccessComplexity', 'AC', 'Médio', 'M', 0.61),
+(3, 'AccessComplexity', 'AC', 'Baixo', 'L', 0.71),
 (4, 'AccessVector', 'AV', 'Local', 'L', 0.395),
-(5, 'AccessVector', 'AV', 'Adjacent Network', 'A', 0.646),
-(6, 'AccessVector', 'AV', 'Network', 'N', 1),
-(7, 'Authentication', 'Au', 'None', 'N', 0.704),
-(8, 'Authentication', 'Au', 'Single Instance', 'S', 0.56),
-(9, 'Authentication', 'Au', 'Multiple Instances', 'M', 0.45),
-(10, 'AvailabilityRequirement', 'AR', 'Undefined', 'ND', 1),
-(11, 'AvailabilityRequirement', 'AR', 'Low', 'L', 0.5),
-(12, 'AvailabilityRequirement', 'AR', 'Medium', 'M', 1),
-(13, 'AvailabilityRequirement', 'AR', 'High', 'H', 1.51),
-(14, 'AvailImpact', 'A', 'None', 'N', 0),
-(15, 'AvailImpact', 'A', 'Partial', 'P', 0.275),
-(16, 'AvailImpact', 'A', 'Complete', 'C', 0.66),
-(17, 'CollateralDamagePotential', 'CDP', 'Undefined', 'ND', 0),
-(18, 'CollateralDamagePotential', 'CDP', 'None', 'N', 0),
-(19, 'CollateralDamagePotential', 'CDP', 'Low (light loss)', 'L', 0.1),
-(20, 'CollateralDamagePotential', 'CDP', 'Low-Medium', 'LM', 0.3),
-(21, 'CollateralDamagePotential', 'CDP', 'Medium-High', 'MH', 0.4),
-(22, 'CollateralDamagePotential', 'CDP', 'High', 'H', 0.5),
-(23, 'ConfidentialityRequirement', 'CR', 'Undefined', 'ND', 1),
-(24, 'ConfidentialityRequirement', 'CR', 'Low', 'L', 0.5),
-(25, 'ConfidentialityRequirement', 'CR', 'Medium', 'M', 1),
-(26, 'ConfidentialityRequirement', 'CR', 'High', 'H', 1.51),
-(27, 'ConfImpact', 'C', 'None', 'N', 0),
-(28, 'ConfImpact', 'C', 'Partial', 'P', 0.275),
-(29, 'ConfImpact', 'C', 'Complete', 'C', 0.66),
-(30, 'Exploitability', 'E', 'Undefined', 'ND', 1),
-(31, 'Exploitability', 'E', 'Unproven that exploit exists', 'U', 0.85),
-(32, 'Exploitability', 'E', 'Proof of concept code', 'POC', 0.9),
-(33, 'Exploitability', 'E', 'Functional exploit exists', 'F', 0.95),
-(34, 'Exploitability', 'E', 'Widespread', 'H', 1),
-(35, 'IntegImpact', 'I', 'None', 'N', 0),
-(36, 'IntegImpact', 'I', 'Partial', 'P', 0.275),
-(37, 'IntegImpact', 'I', 'Complete', 'C', 0.66),
-(38, 'IntegrityRequirement', 'IR', 'Undefined', 'ND', 1),
-(39, 'IntegrityRequirement', 'IR', 'Low', 'L', 0.5),
-(40, 'IntegrityRequirement', 'IR', 'Medium', 'M', 1),
-(41, 'IntegrityRequirement', 'IR', 'High', 'H', 1.51),
-(42, 'RemediationLevel', 'RL', 'Undefined', 'ND', 1),
-(43, 'RemediationLevel', 'RL', 'Official fix', 'OF', 0.87),
-(44, 'RemediationLevel', 'RL', 'Temporary fix', 'TF', 0.9),
-(45, 'RemediationLevel', 'RL', 'Workaround', 'W', 0.95),
-(46, 'RemediationLevel', 'RL', 'Unavailable', 'U', 1),
-(47, 'ReportConfidence', 'RC', 'Undefined', 'ND', 1),
-(48, 'ReportConfidence', 'RC', 'Unconfirmed', 'UC', 0.9),
-(49, 'ReportConfidence', 'RC', 'Uncorroborated', 'UR', 0.95),
-(50, 'ReportConfidence', 'RC', 'Confirmed', 'C', 1),
-(51, 'TargetDistribution', 'TD', 'Undefined', 'ND', 1),
-(52, 'TargetDistribution', 'TD', 'None (0%)', 'N', 0),
-(53, 'TargetDistribution', 'TD', 'Low (0-25%)', 'L', 0.25),
-(54, 'TargetDistribution', 'TD', 'Medium (26-75%)', 'M', 0.75),
-(55, 'TargetDistribution', 'TD', 'High (76-100%)', 'H', 1);
+(5, 'AccessVector', 'AV', 'Rede adjacente', 'A', 0.646),
+(6, 'AccessVector', 'AV', 'Rede', 'N', 1),
+(7, 'Authentication', 'Au', 'Nenhum', 'N', 0.704),
+(8, 'Authentication', 'Au', 'Única instância', 'S', 0.56),
+(9, 'Authentication', 'Au', 'Múltiplas instâncias', 'M', 0.45),
+(10, 'AvailabilityRequirement', 'AR', 'Indefinido', 'ND', 1),
+(11, 'AvailabilityRequirement', 'AR', 'Baixo', 'L', 0.5),
+(12, 'AvailabilityRequirement', 'AR', 'Médio', 'M', 1),
+(13, 'AvailabilityRequirement', 'AR', 'Alto', 'H', 1.51),
+(14, 'AvailImpact', 'A', 'Nenhum', 'N', 0),
+(15, 'AvailImpact', 'A', 'Parcial', 'P', 0.275),
+(16, 'AvailImpact', 'A', 'Completo', 'C', 0.66),
+(17, 'CollateralDamagePotential', 'CDP', 'Indefinido', 'ND', 0),
+(18, 'CollateralDamagePotential', 'CDP', 'Nenhum', 'N', 0),
+(19, 'CollateralDamagePotential', 'CDP', 'Baixo (baixa perda)', 'L', 0.1),
+(20, 'CollateralDamagePotential', 'CDP', 'Baixo-Médio', 'LM', 0.3),
+(21, 'CollateralDamagePotential', 'CDP', 'Médio-Alto', 'MH', 0.4),
+(22, 'CollateralDamagePotential', 'CDP', 'Alto', 'H', 0.5),
+(23, 'ConfidentialityRequirement', 'CR', 'Indefinido', 'ND', 1),
+(24, 'ConfidentialityRequirement', 'CR', 'Baixo', 'L', 0.5),
+(25, 'ConfidentialityRequirement', 'CR', 'Médio', 'M', 1),
+(26, 'ConfidentialityRequirement', 'CR', 'Alto', 'H', 1.51),
+(27, 'ConfImpact', 'C', 'Nenhum', 'N', 0),
+(28, 'ConfImpact', 'C', 'Parcial', 'P', 0.275),
+(29, 'ConfImpact', 'C', 'Completo', 'C', 0.66),
+(30, 'Exploitability', 'E', 'Indefinido', 'ND', 1),
+(31, 'Exploitability', 'E', 'Sem exploração existente', 'U', 0.85),
+(32, 'Exploitability', 'E', 'Prova de conceito de código', 'POC', 0.9),
+(33, 'Exploitability', 'E', 'Exploração funcional existente', 'F', 0.95),
+(34, 'Exploitability', 'E', 'Muito difundido', 'H', 1),
+(35, 'IntegImpact', 'I', 'Nenhum', 'N', 0),
+(36, 'IntegImpact', 'I', 'Parcial', 'P', 0.275),
+(37, 'IntegImpact', 'I', 'Completo', 'C', 0.66),
+(38, 'IntegrityRequirement', 'IR', 'Indefinido', 'ND', 1),
+(39, 'IntegrityRequirement', 'IR', 'Baixo', 'L', 0.5),
+(40, 'IntegrityRequirement', 'IR', 'Médio', 'M', 1),
+(41, 'IntegrityRequirement', 'IR', 'Alto', 'H', 1.51),
+(42, 'RemediationLevel', 'RL', 'Indefinido', 'ND', 1),
+(43, 'RemediationLevel', 'RL', 'Oficialmente corrigido', 'OF', 0.87),
+(44, 'RemediationLevel', 'RL', 'Temporariamente corrigido', 'TF', 0.9),
+(45, 'RemediationLevel', 'RL', 'Solução de contorno', 'W', 0.95),
+(46, 'RemediationLevel', 'RL', 'Indisponível', 'U', 1),
+(47, 'ReportConfidence', 'RC', 'Indefinido', 'ND', 1),
+(48, 'ReportConfidence', 'RC', 'Não confirmado', 'UC', 0.9),
+(49, 'ReportConfidence', 'RC', 'Não comprovado', 'UR', 0.95),
+(50, 'ReportConfidence', 'RC', 'Confirmado', 'C', 1),
+(51, 'TargetDistribution', 'TD', 'Indefinido', 'ND', 1),
+(52, 'TargetDistribution', 'TD', 'Nenhum (0%)', 'N', 0),
+(53, 'TargetDistribution', 'TD', 'Baixo (0-25%)', 'L', 0.25),
+(54, 'TargetDistribution', 'TD', 'Médio (26-75%)', 'M', 0.75),
+(55, 'TargetDistribution', 'TD', 'Alto (76-100%)', 'H', 1);
 
 -- --------------------------------------------------------
 
@@ -181,11 +181,11 @@ CREATE TABLE IF NOT EXISTS `impact` (
 --
 
 INSERT INTO `impact` (`name`, `value`) VALUES
-('Insignificant', 1),
-('Minor', 2),
-('Moderate', 3),
-('Major', 4),
-('Extreme/Catastrophic', 5);
+('Insignificante', 1),
+('Menor', 2),
+('Moderado', 3),
+('Maior', 4),
+('Extremo/Catastrófico', 5);
 
 -- --------------------------------------------------------
 
@@ -224,11 +224,11 @@ CREATE TABLE IF NOT EXISTS `likelihood` (
 --
 
 INSERT INTO `likelihood` (`name`, `value`) VALUES
-('Remote', 1),
-('Unlikely', 2),
-('Credible', 3),
-('Likely', 4),
-('Almost Certain', 5);
+('Remoto', 1),
+('Improvável', 2),
+('Acreditável', 3),
+('Provável', 4),
+('Quase Certo', 5);
 
 -- --------------------------------------------------------
 
@@ -247,7 +247,7 @@ CREATE TABLE IF NOT EXISTS `location` (
 --
 
 INSERT INTO `location` (`value`, `name`) VALUES
-(1, 'All Sites');
+(1, 'Todos os Sites');
 
 -- --------------------------------------------------------
 
@@ -304,10 +304,10 @@ CREATE TABLE IF NOT EXISTS `mitigation_effort` (
 
 INSERT INTO `mitigation_effort` (`value`, `name`) VALUES
 (1, 'Trivial'),
-(2, 'Minor'),
-(3, 'Considerable'),
-(4, 'Significant'),
-(5, 'Exceptional');
+(2, 'Menor'),
+(3, 'Considerável'),
+(4, 'Significativo'),
+(5, 'Excepcional');
 
 -- --------------------------------------------------------
 
@@ -326,9 +326,9 @@ CREATE TABLE IF NOT EXISTS `next_step` (
 --
 
 INSERT INTO `next_step` (`value`, `name`) VALUES
-(1, 'Accept Until Next Review'),
-(2, 'Consider for Project'),
-(3, 'Submit as a Production Issue');
+(1, 'Aceitar até a Próxima Revisão'),
+(2, 'Considerar para Projeto'),
+(3, 'Enviar como um Problema de Produção');
 
 -- --------------------------------------------------------
 
@@ -360,10 +360,10 @@ CREATE TABLE IF NOT EXISTS `planning_strategy` (
 --
 
 INSERT INTO `planning_strategy` (`value`, `name`) VALUES
-(1, 'Research'),
-(2, 'Accept'),
-(3, 'Mitigate'),
-(4, 'Watch');
+(1, 'Pesquisa'),
+(2, 'Aceitar'),
+(3, 'Mitigar'),
+(4, 'Observar');
 
 -- --------------------------------------------------------
 
@@ -383,7 +383,7 @@ CREATE TABLE IF NOT EXISTS `projects` (
 --
 
 INSERT INTO `projects` (`value`, `name`, `order`) VALUES
-(0, 'Unassigned Risks', 0);
+(0, 'Riscos não Atribuídos', 0);
 
 -- --------------------------------------------------------
 
@@ -424,8 +424,8 @@ CREATE TABLE IF NOT EXISTS `review` (
 --
 
 INSERT INTO `review` (`value`, `name`) VALUES
-(1, 'Approve Risk'),
-(2, 'Reject Risk');
+(1, 'Aprovar Risco'),
+(2, 'Rejeitar Risco');
 
 -- --------------------------------------------------------
 
@@ -440,6 +440,7 @@ CREATE TABLE IF NOT EXISTS `review_levels` (
 
 --
 -- Dumping data for table `review_levels`
+-- IMPORTANT: DO NOT TRANSLATE THOSE LEVELS
 --
 
 INSERT INTO `review_levels` (`value`, `name`) VALUES
@@ -492,6 +493,7 @@ CREATE TABLE IF NOT EXISTS `risk_levels` (
 
 --
 -- Dumping data for table `risk_levels`
+-- IMPORTANT: DO NOT TRANSLATE THOSE LEVELS
 --
 
 INSERT INTO `risk_levels` (`value`, `name`) VALUES
@@ -515,11 +517,11 @@ CREATE TABLE IF NOT EXISTS `risk_models` (
 --
 
 INSERT INTO `risk_models` (`value`, `name`) VALUES
-(1, 'Likelihood x Impact + 2(Impact)'),
-(2, 'Likelihood x Impact + Impact'),
-(3, 'Likelihood x Impact'),
-(4, 'Likelihood x Impact + Likelihood'),
-(5, 'Likelihood x Impact + 2(Likelihood)');
+(1, 'Probabilidade x Impacto + 2(Impacto)'),
+(2, 'Probabilidade x Impacto + Impacto'),
+(3, 'Probabilidade x Impacto'),
+(4, 'Probabilidade x Impacto + Probabilidade'),
+(5, 'Probabilidade x Impacto + 2(Probabilidade)');
 
 -- --------------------------------------------------------
 
@@ -622,15 +624,15 @@ CREATE TABLE IF NOT EXISTS `team` (
 --
 
 INSERT INTO `team` (`value`, `name`) VALUES
-(1, 'Branch Management'),
-(2, 'Collaboration'),
+(1, 'Gestão de Filial'),
+(2, 'Colaboração'),
 (3, 'Data Center & Storage'),
-(4, 'Database'),
-(5, 'Information Security'),
-(6, 'IT Systems Management'),
-(7, 'Network'),
+(4, 'Banco de Dados'),
+(5, 'Segurança da Informação'),
+(6, 'Sistemas de Gestão de TI'),
+(7, 'Rede'),
 (8, 'Unix'),
-(9, 'Web Systems'),
+(9, 'Sistemas Web'),
 (10, 'Windows');
 
 -- --------------------------------------------------------
@@ -653,20 +655,20 @@ INSERT INTO `technology` (`value`, `name`) VALUES
 (1, 'All'),
 (2, 'Anti-Virus'),
 (3, 'Backups'),
-(4, 'Blackberry'),
-(5, 'Citrix'),
+(4, 'Smartphone'),
+(5, 'Switche'),
 (6, 'Datacenter'),
-(7, 'Mail Routing'),
-(8, 'Live Collaboration'),
-(9, 'Messaging'),
-(10, 'Mobile'),
-(11, 'Network'),
-(12, 'Power'),
-(13, 'Remote Access'),
-(14, 'SAN'),
-(15, 'Telecom'),
+(7, 'Rota de E-mail'),
+(8, 'Colaboração em Tempo Real'),
+(9, 'Mensagens'),
+(10, 'Dispositivo Móvel'),
+(11, 'Rede'),
+(12, 'Energia'),
+(13, 'Acesso Remoto'),
+(14, 'Servidor de Arquivos'),
+(15, 'Telefonia'),
 (16, 'Unix'),
-(17, 'VMWare'),
+(17, 'Virtualização'),
 (18, 'Web'),
 (19, 'Windows');
 
