@@ -30,14 +30,14 @@ CREATE TABLE IF NOT EXISTS `category` (
 --
 
 INSERT INTO `category` (`value`, `name`) VALUES
-(1, 'GestiÛn de Acceso'), 
-(2, 'La Resistencia Ambiental'), 
-(3, 'Vigilancia'), 
-(4, 'Seguridad FÌsica'), 
-(5, 'Politica y Procedimiento'), 
-(6, 'GestiÛn de datos sensibles'), 
-(7, 'GestiÛn de Tecnica de Vulnerabilidades'), 
-(8, 'GestiÛn de Terceros');
+(7, 'Gesti√≥n de Tecnica de Vulnerabilidades'),
+(6, 'Gesti√≥n de datos sensibles'),
+(5, 'Politica y Procedimiento'),
+(4, 'Seguridad F√≠sica'),
+(3, 'Vigilancia'),
+(2, 'La Resistencia Ambiental'),
+(1, 'Gesti√≥n de Acceso'),
+(8, 'Gesti√≥n de Terceros');
 
 -- --------------------------------------------------------
 
@@ -60,7 +60,7 @@ INSERT INTO `close_reason` (`value`, `name`) VALUES
 (1, 'Totalmente Mitigada'), 
 (2, 'Sistema Retirado'), 
 (3, 'Cancelado'), 
-(4, ‘Demasiado Insignificante');
+(4, 'Demasiado Insignificante');
 
 -- --------------------------------------------------------
 
@@ -211,7 +211,7 @@ CREATE TABLE IF NOT EXISTS `languages` (
 
 INSERT INTO `languages` (`value`, `name`, `full`) VALUES
 (1, 'en', 'English'),
-(2, 'bp', 'Brazilian Portuguese');
+(2, 'bp', 'Brazilian Portuguese'),
 (3, 'es', 'Espanol');
 
 -- --------------------------------------------------------
@@ -333,7 +333,7 @@ CREATE TABLE IF NOT EXISTS `next_step` (
 --
 
 INSERT INTO `next_step` (`value`, `name`) VALUES
-(1, 'Aceptada hasta proxima revision'),
+(1, 'Aceptada Hasta Proxima Revision'),
 (2, 'Considerado por Proyecto'),
 (3, 'Presentar como un Problema de Produccion');
 
@@ -433,7 +433,7 @@ CREATE TABLE IF NOT EXISTS `review` (
 
 INSERT INTO `review` (`value`, `name`) VALUES
 (1, 'Aprobar Riesgo'),
-(2, 'Rechazar Riesgo y’ Cerca);
+(2, 'Rechazar Riesgo y Cerca');
 
 -- --------------------------------------------------------
 
@@ -451,9 +451,9 @@ CREATE TABLE IF NOT EXISTS `review_levels` (
 --
 
 INSERT INTO `review_levels` (`value`, `name`) VALUES
-(90, ‘High’),
-(180, 'Medium’),
-(360, ‘Low’);
+(90, 'High'),
+(180, 'Medium'),
+(360, 'Low');
 
 -- --------------------------------------------------------
 
@@ -503,9 +503,9 @@ CREATE TABLE IF NOT EXISTS `risk_levels` (
 --
 
 INSERT INTO `risk_levels` (`value`, `name`) VALUES
-(7.0, ‘High’),
-(4.0, 'Medium’),
-(0.0, ‘Low’);
+(7.0, 'High'),
+(4.0, 'Medium'),
+(0.0, 'Low');
 
 -- --------------------------------------------------------
 
@@ -635,11 +635,11 @@ INSERT INTO `team` (`value`, `name`) VALUES
 (2, 'Colaboracion'), 
 (3, 'Centro de Datos & Almacenamiento'), 
 (4, 'Base de datos'), 
-(5, 'InformaciÛn de Seguridad'), 
-(6, 'GestiÛn de Sistemas IT'), 
-(7, "Red"), 
+(5, 'Informaci√≥n de Seguridad'), 
+(6, 'Gesti√≥n de Sistemas IT'), 
+(7, 'Red'), 
 (8, 'Unix'), 
-(9, 'Sistemas Web "), 
+(9, 'Sistemas Web'), 
 (10, 'Windows');
 
 -- --------------------------------------------------------
@@ -714,4 +714,4 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`value`, `enabled`, `type`, `username`, `name`, `email`, `salt`, `password`, `last_login`, `teams`, `lang`, `admin`, `review_high`, `review_medium`, `review_low`, `submit_risks`, `modify_risks`, `plan_mitigations`, `close_risks`, `multi_factor`) VALUES
-(1, 1, 'simplerisk', 'admin', 'Admin', 'user@example.com', 'sAbwTbIFywWKcheyQw9a', '$2a$15$7b2601b4979b1ad031b2fuqf1XkeSa4iNxsHK27tq5Va2jLhzkShW', '2014-07-28 00:00:00’, 'all', NULL, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+(1, 1, 'simplerisk', 'admin', 'Admin', 'user@example.com', 'sAbwTbIFywWKcheyQw9a', '$2a$15$7b2601b4979b1ad031b2fuqf1XkeSa4iNxsHK27tq5Va2jLhzkShW', '2014-07-28 00:00:00', 'all', NULL, 1, 1, 1, 1, 1, 1, 1, 1, 1);
