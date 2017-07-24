@@ -35,7 +35,7 @@ CREATE TABLE `CVSS_scoring` (
 
 LOCK TABLES `CVSS_scoring` WRITE;
 /*!40000 ALTER TABLE `CVSS_scoring` DISABLE KEYS */;
-INSERT INTO `CVSS_scoring` VALUES (1,'AccessComplexity','AC','Alto','H',0.35),(2,'AccessComplexity','AC','Medio','M',0.61),(3,'AccessComplexity','AC','Bajo','L',0.71),(4,'AccessVector','AV','Local','L',0.395),(5,'AccessVector','AV','Red Adyacente','A',0.646),(6,'AccessVector','AV','Red','N',1),(7,'Authentication','Au','Ninguno','N',0.704),(8,'Authentication','Au','Instancia','S',0.56),(9,'Authentication','Au','Multiples Instancias','M',0.45),(10,'AvailabilityRequirement','AR','No definido','ND',1),(11,'AvailabilityRequirement','AR','Bajo','L',0.5),(12,'AvailabilityRequirement','AR','Medio','M',1),(13,'AvailabilityRequirement','AR','Alto','H',1.51),(14,'AvailImpact','A','Ninguno','N',0),(15,'AvailImpact','A','Parcial','P',0.275),(16,'AvailImpact','A','Completado','C',0.66),(17,'CollateralDamagePotential','CDP','No definido','ND',0),(18,'CollateralDamagePotential','CDP','Ninguno','N',0),(19,'CollateralDamagePotential','CDP','BAjo (Baja Perdida)','L',0.1),(20,'CollateralDamagePotential','CDP','Medio-Bajo','LM',0.3),(21,'CollateralDamagePotential','CDP','Medio-Alto','MH',0.4),(22,'CollateralDamagePotential','CDP','Alto','H',0.5),(23,'ConfidentialityRequirement','CR','No definido','ND',1),(24,'ConfidentialityRequirement','CR','Bajo','L',0.5),(25,'ConfidentialityRequirement','CR','Medio','M',1),(26,'ConfidentialityRequirement','CR','Alto','H',1.51),(27,'ConfImpact','C','Ninguno','N',0),(28,'ConfImpact','C','Parcial','P',0.275),(29,'ConfImpact','C','Completado','C',0.66),(30,'Exploitability','E','No definido','ND',1),(31,'Exploitability','E','No comporbadas Estas Funciones','U',0.85),(32,'Exploitability','E','Prueba de Concepto','POC',0.9),(33,'Exploitability','E','Explotar Funciones Existentes','F',0.95),(34,'Exploitability','E','Extendido','H',1),(35,'IntegImpact','I','Ninguno','N',0),(36,'IntegImpact','I','Parcial','P',0.275),(37,'IntegImpact','I','Completado','C',0.66),(38,'IntegrityRequirement','IR','No definido','ND',1),(39,'IntegrityRequirement','IR','Bajo','L',0.5),(40,'IntegrityRequirement','IR','Medio','M',1),(41,'IntegrityRequirement','IR','Alto','H',1.51),(42,'RemediationLevel','RL','No definido','ND',1),(43,'RemediationLevel','RL','Arreglo','OF',0.87),(44,'RemediationLevel','RL','Arreglo Temporal','TF',0.9),(45,'RemediationLevel','RL','Solucion','W',0.95),(46,'RemediationLevel','RL','No disponible','U',1),(47,'ReportConfidence','RC','No definido','ND',1),(48,'ReportConfidence','RC','Sin Confirmar','UC',0.9),(49,'ReportConfidence','RC','No corroborada','UR',0.95),(50,'ReportConfidence','RC','Confirmada','C',1),(51,'TargetDistribution','TD','No definido','ND',1),(52,'TargetDistribution','TD','Ninguno (0%)','N',0),(53,'TargetDistribution','TD','Bajo (0-25%)','L',0.25),(54,'TargetDistribution','TD','Medio (26-75%)','M',0.75),(55,'TargetDistribution','TD','Alto (76-100%)','H',1);
+INSERT INTO `CVSS_scoring` VALUES (1,'AccessComplexity','AC','High','H',0.35),(2,'AccessComplexity','AC','Medium','M',0.61),(3,'AccessComplexity','AC','Low','L',0.71),(4,'AccessVector','AV','Local','L',0.395),(5,'AccessVector','AV','Adjacent Network','A',0.646),(6,'AccessVector','AV','Network','N',1),(7,'Authentication','Au','None','N',0.704),(8,'Authentication','Au','Single Instance','S',0.56),(9,'Authentication','Au','Multiple Instances','M',0.45),(10,'AvailabilityRequirement','AR','Undefined','ND',1),(11,'AvailabilityRequirement','AR','Low','L',0.5),(12,'AvailabilityRequirement','AR','Medium','M',1),(13,'AvailabilityRequirement','AR','High','H',1.51),(14,'AvailImpact','A','None','N',0),(15,'AvailImpact','A','Partial','P',0.275),(16,'AvailImpact','A','Complete','C',0.66),(17,'CollateralDamagePotential','CDP','Undefined','ND',0),(18,'CollateralDamagePotential','CDP','None','N',0),(19,'CollateralDamagePotential','CDP','Low (light loss)','L',0.1),(20,'CollateralDamagePotential','CDP','Low-Medium','LM',0.3),(21,'CollateralDamagePotential','CDP','Medium-High','MH',0.4),(22,'CollateralDamagePotential','CDP','High','H',0.5),(23,'ConfidentialityRequirement','CR','Undefined','ND',1),(24,'ConfidentialityRequirement','CR','Low','L',0.5),(25,'ConfidentialityRequirement','CR','Medium','M',1),(26,'ConfidentialityRequirement','CR','High','H',1.51),(27,'ConfImpact','C','None','N',0),(28,'ConfImpact','C','Partial','P',0.275),(29,'ConfImpact','C','Complete','C',0.66),(30,'Exploitability','E','Undefined','ND',1),(31,'Exploitability','E','Unproven that exploit exists','U',0.85),(32,'Exploitability','E','Proof of concept code','POC',0.9),(33,'Exploitability','E','Functional exploit exists','F',0.95),(34,'Exploitability','E','Widespread','H',1),(35,'IntegImpact','I','None','N',0),(36,'IntegImpact','I','Partial','P',0.275),(37,'IntegImpact','I','Complete','C',0.66),(38,'IntegrityRequirement','IR','Undefined','ND',1),(39,'IntegrityRequirement','IR','Low','L',0.5),(40,'IntegrityRequirement','IR','Medium','M',1),(41,'IntegrityRequirement','IR','High','H',1.51),(42,'RemediationLevel','RL','Undefined','ND',1),(43,'RemediationLevel','RL','Official fix','OF',0.87),(44,'RemediationLevel','RL','Temporary fix','TF',0.9),(45,'RemediationLevel','RL','Workaround','W',0.95),(46,'RemediationLevel','RL','Unavailable','U',1),(47,'ReportConfidence','RC','Undefined','ND',1),(48,'ReportConfidence','RC','Unconfirmed','UC',0.9),(49,'ReportConfidence','RC','Uncorroborated','UR',0.95),(50,'ReportConfidence','RC','Confirmed','C',1),(51,'TargetDistribution','TD','Undefined','ND',1),(52,'TargetDistribution','TD','None (0%)','N',0),(53,'TargetDistribution','TD','Low (0-25%)','L',0.25),(54,'TargetDistribution','TD','Medium (26-75%)','M',0.75),(55,'TargetDistribution','TD','High (76-100%)','H',1);
 /*!40000 ALTER TABLE `CVSS_scoring` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -221,7 +221,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'Gestión de Acceso'),(2,'La Resistencia Ambiental'),(3,'Vigilancia'),(4,'Seguridad Física'),(5,'Politica y Procedimiento'),(6,'Gestión de datos sensibles'),(7,'Gestión de Tecnica de Vulnerabilidades'),(8,'Gestión de Terceros');
+INSERT INTO `category` VALUES (1,'Access Management'),(2,'Environmental Resilience'),(3,'Monitoring'),(4,'Physical Security'),(5,'Policy and Procedure'),(6,'Sensitive Data Management'),(7,'Technical Vulnerability Management'),(8,'Third-Party Management');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -245,7 +245,7 @@ CREATE TABLE `close_reason` (
 
 LOCK TABLES `close_reason` WRITE;
 /*!40000 ALTER TABLE `close_reason` DISABLE KEYS */;
-INSERT INTO `close_reason` VALUES (0,'Rechazado'),(1,'Totalmente Mitigada'),(2,'Sistema Retirado'),(3,'Cancelado'),(4,'Demasiado Insignificante');
+INSERT INTO `close_reason` VALUES (0,'Rejected'),(1,'Fully Mitigated'),(2,'System Retired'),(3,'Cancelled'),(4,'Too Insignificant');
 /*!40000 ALTER TABLE `close_reason` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -402,7 +402,7 @@ CREATE TABLE `impact` (
 
 LOCK TABLES `impact` WRITE;
 /*!40000 ALTER TABLE `impact` DISABLE KEYS */;
-INSERT INTO `impact` VALUES ('Insignificante',1),('Menor',2),('Moderado',3),('Mayor',4),('Extremo/Catastrofico',5);
+INSERT INTO `impact` VALUES ('Insignificant',1),('Minor',2),('Moderate',3),('Major',4),('Extreme/Catastrophic',5);
 /*!40000 ALTER TABLE `impact` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -427,7 +427,7 @@ CREATE TABLE `languages` (
 
 LOCK TABLES `languages` WRITE;
 /*!40000 ALTER TABLE `languages` DISABLE KEYS */;
-INSERT INTO `languages` VALUES (1,'en','English'),(2,'bp','Brazilian Portuguese'),(3,'es','Espanol'),(4,'ar','Arabic'),(5,'ca','Catalan'),(6,'cs','Czech'),(7,'da','Danish'),(8,'de','German'),(9,'el','Greek'),(10,'fi','Finnish'),(11,'fr','French'),(12,'he','Hebrew'),(13,'hi','Hindi'),(14,'hu','Hungarian'),(15,'it','Italian'),(16,'ja','Japanese'),(17,'ko','Korean'),(18,'nl','Dutch'),(19,'no','Norwegian'),(20,'pl','Polish'),(21,'pt','Portuguese'),(22,'ro','Romanian'),(23,'ru','Russian'),(24,'sr','Serbian'),(25,'sv','Swedish'),(26,'tr','Turkish'),(27,'uk','Ukranian'),(28,'vi','Vietnamese'),(29,'zh-CN','Chinese Simplified'),(30,'zh-TW','Chinese Traditional');
+INSERT INTO `languages` VALUES (1,'en','English'),(2,'bp','Brazilian Portuguese'),(3,'es','Spanish'),(4,'ar','Arabic'),(5,'ca','Catalan'),(6,'cs','Czech'),(7,'da','Danish'),(8,'de','German'),(9,'el','Greek'),(10,'fi','Finnish'),(11,'fr','French'),(12,'he','Hebrew'),(13,'hi','Hindi'),(14,'hu','Hungarian'),(15,'it','Italian'),(16,'ja','Japanese'),(17,'ko','Korean'),(18,'nl','Dutch'),(19,'no','Norwegian'),(20,'pl','Polish'),(21,'pt','Portuguese'),(22,'ro','Romanian'),(23,'ru','Russian'),(24,'sr','Serbian'),(25,'sv','Swedish'),(26,'tr','Turkish'),(27,'uk','Ukranian'),(28,'vi','Vietnamese'),(29,'zh-CN','Chinese Simplified'),(30,'zh-TW','Chinese Traditional');
 /*!40000 ALTER TABLE `languages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -450,7 +450,7 @@ CREATE TABLE `likelihood` (
 
 LOCK TABLES `likelihood` WRITE;
 /*!40000 ALTER TABLE `likelihood` DISABLE KEYS */;
-INSERT INTO `likelihood` VALUES ('Remota',1),('Improbable',2),('Creible',3),('Probable',4),('Casi Certero',5);
+INSERT INTO `likelihood` VALUES ('Remote',1),('Unlikely',2),('Credible',3),('Likely',4),('Almost Certain',5);
 /*!40000 ALTER TABLE `likelihood` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -474,7 +474,7 @@ CREATE TABLE `location` (
 
 LOCK TABLES `location` WRITE;
 /*!40000 ALTER TABLE `location` DISABLE KEYS */;
-INSERT INTO `location` VALUES (1,'Todas las Locaciones');
+INSERT INTO `location` VALUES (1,'All Sites');
 /*!40000 ALTER TABLE `location` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -527,7 +527,7 @@ CREATE TABLE `mitigation_effort` (
 
 LOCK TABLES `mitigation_effort` WRITE;
 /*!40000 ALTER TABLE `mitigation_effort` DISABLE KEYS */;
-INSERT INTO `mitigation_effort` VALUES (1,'Insignificante'),(2,'Menor'),(3,'Considerable'),(4,'Significante'),(5,'Excepcional');
+INSERT INTO `mitigation_effort` VALUES (1,'Trivial'),(2,'Minor'),(3,'Considerable'),(4,'Significant'),(5,'Exceptional');
 /*!40000 ALTER TABLE `mitigation_effort` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -587,7 +587,7 @@ CREATE TABLE `next_step` (
 
 LOCK TABLES `next_step` WRITE;
 /*!40000 ALTER TABLE `next_step` DISABLE KEYS */;
-INSERT INTO `next_step` VALUES (1,'Aceptada Hasta Proxima Revision'),(2,'Considerado por Proyecto'),(3,'Presentar como un Problema de Produccion');
+INSERT INTO `next_step` VALUES (1,'Accept Until Next Review'),(2,'Consider for Project'),(3,'Submit as a Production Issue');
 /*!40000 ALTER TABLE `next_step` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -663,7 +663,7 @@ CREATE TABLE `planning_strategy` (
 
 LOCK TABLES `planning_strategy` WRITE;
 /*!40000 ALTER TABLE `planning_strategy` DISABLE KEYS */;
-INSERT INTO `planning_strategy` VALUES (1,'Investigar'),(2,'Acceptado'),(3,'Mitigado'),(4,'Ver'),(5,'Transferencia');
+INSERT INTO `planning_strategy` VALUES (1,'Research'),(2,'Accept'),(3,'Mitigate'),(4,'Watch'),(5,'Transfer');
 /*!40000 ALTER TABLE `planning_strategy` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -689,7 +689,7 @@ CREATE TABLE `projects` (
 
 LOCK TABLES `projects` WRITE;
 /*!40000 ALTER TABLE `projects` DISABLE KEYS */;
-INSERT INTO `projects` VALUES (0,'Riesgo no Asignado',0,1);
+INSERT INTO `projects` VALUES (0,'Unassigned Risks',0,1);
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -737,7 +737,7 @@ CREATE TABLE `review` (
 
 LOCK TABLES `review` WRITE;
 /*!40000 ALTER TABLE `review` DISABLE KEYS */;
-INSERT INTO `review` VALUES (1,'Aprobar Riesgo'),(2,'Rechazar Riesgo y Cerca');
+INSERT INTO `review` VALUES (1,'Approve Risk'),(2,'Reject Risk and Close');
 /*!40000 ALTER TABLE `review` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -808,7 +808,7 @@ CREATE TABLE `risk_models` (
 
 LOCK TABLES `risk_models` WRITE;
 /*!40000 ALTER TABLE `risk_models` DISABLE KEYS */;
-INSERT INTO `risk_models` VALUES (1,'Probabilidad x Impacto + 2(Impacto)'),(2,'Probabilidad x Impacto + Impacto'),(3,'Probabilidad x Impacto'),(4,'Probabilidad x Impacto + Probabilidad'),(5,'Probabilidad x Impacto + 2(Probabilidad)');
+INSERT INTO `risk_models` VALUES (1,'Likelihood x Impact + 2(Impact)'),(2,'Likelihood x Impact + Impact'),(3,'Likelihood x Impact'),(4,'Likelihood x Impact + Likelihood'),(5,'Likelihood x Impact + 2(Likelihood)');
 /*!40000 ALTER TABLE `risk_models` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1036,7 +1036,7 @@ CREATE TABLE `settings` (
 
 LOCK TABLES `settings` WRITE;
 /*!40000 ALTER TABLE `settings` DISABLE KEYS */;
-INSERT INTO `settings` VALUES ('currency','$'),('db_version','20170723-001'),('default_asset_valuation','5'),('default_risk_score','10'),('max_upload_size','5120000'),('NOTIFY_ADDITIONAL_STAKEHOLDERS','true'),('pass_policy_alpha_required','1'),('pass_policy_attempt_lockout','0'),('pass_policy_attempt_lockout_time','10'),('pass_policy_digits_required','1'),('pass_policy_enabled','1'),('pass_policy_lower_required','1'),('pass_policy_max_age','0'),('pass_policy_min_age','0'),('pass_policy_min_chars','8'),('pass_policy_reuse_limit','0'),('pass_policy_re_use_tracking','0'),('pass_policy_special_required','1'),('pass_policy_upper_required','1'),('phpmailer_from_email','noreply@simplerisk.it'),('phpmailer_from_name','SimpleRisk'),('phpmailer_host','smtp1.example.com'),('phpmailer_password','secret'),('phpmailer_port','587'),('phpmailer_replyto_email','noreply@simplerisk.it'),('phpmailer_replyto_name','SimpleRisk'),('phpmailer_smtpauth','false'),('phpmailer_smtpsecure','none'),('phpmailer_transport','sendmail'),('phpmailer_username','user@example.com'),('registration_registered','0'),('risk_model','3'),('strict_user_validation','1');
+INSERT INTO `settings` VALUES ('currency','$'),('db_version','20170724-001'),('default_asset_valuation','5'),('default_risk_score','10'),('max_upload_size','5120000'),('NOTIFY_ADDITIONAL_STAKEHOLDERS','true'),('pass_policy_alpha_required','1'),('pass_policy_attempt_lockout','0'),('pass_policy_attempt_lockout_time','10'),('pass_policy_digits_required','1'),('pass_policy_enabled','1'),('pass_policy_lower_required','1'),('pass_policy_max_age','0'),('pass_policy_min_age','0'),('pass_policy_min_chars','8'),('pass_policy_reuse_limit','0'),('pass_policy_re_use_tracking','0'),('pass_policy_special_required','1'),('pass_policy_upper_required','1'),('phpmailer_from_email','noreply@simplerisk.it'),('phpmailer_from_name','SimpleRisk'),('phpmailer_host','smtp1.example.com'),('phpmailer_password','secret'),('phpmailer_port','587'),('phpmailer_replyto_email','noreply@simplerisk.it'),('phpmailer_replyto_name','SimpleRisk'),('phpmailer_smtpauth','false'),('phpmailer_smtpsecure','none'),('phpmailer_transport','sendmail'),('phpmailer_username','user@example.com'),('registration_registered','0'),('risk_model','3'),('strict_user_validation','1');
 /*!40000 ALTER TABLE `settings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1060,7 +1060,7 @@ CREATE TABLE `source` (
 
 LOCK TABLES `source` WRITE;
 /*!40000 ALTER TABLE `source` DISABLE KEYS */;
-INSERT INTO `source` VALUES (1,'Gente'),(2,'Proceso'),(3,'Sistema'),(4,'Externo');
+INSERT INTO `source` VALUES (1,'People'),(2,'Process'),(3,'System'),(4,'External');
 /*!40000 ALTER TABLE `source` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1084,7 +1084,7 @@ CREATE TABLE `status` (
 
 LOCK TABLES `status` WRITE;
 /*!40000 ALTER TABLE `status` DISABLE KEYS */;
-INSERT INTO `status` VALUES (1,'Nuevo'),(2,'Mitigación de Planificación'),(3,'Gestión Comentado'),(4,'Cerrado'),(5,'Reabierto'),(6,'Sin Tratar'),(7,'Tratada');
+INSERT INTO `status` VALUES (1,'New'),(2,'Mitigation Planned'),(3,'Mgmt Reviewed'),(4,'Closed'),(5,'Reopened'),(6,'Untreated'),(7,'Treated');
 /*!40000 ALTER TABLE `status` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1108,7 +1108,7 @@ CREATE TABLE `team` (
 
 LOCK TABLES `team` WRITE;
 /*!40000 ALTER TABLE `team` DISABLE KEYS */;
-INSERT INTO `team` VALUES (1,'Gestion de Rama'),(2,'Colaboracion'),(3,'Centro de Datos & Almacenamiento'),(4,'Base de datos'),(5,'Información de Seguridad'),(6,'Gestión de Sistemas IT'),(7,'Red'),(8,'Unix'),(9,'Sistemas Web'),(10,'Windows');
+INSERT INTO `team` VALUES (1,'Branch Management'),(2,'Collaboration'),(3,'Data Center & Storage'),(4,'Database'),(5,'Information Security'),(6,'IT Systems Management'),(7,'Network'),(8,'Unix'),(9,'Web Systems'),(10,'Windows');
 /*!40000 ALTER TABLE `team` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1132,7 +1132,7 @@ CREATE TABLE `technology` (
 
 LOCK TABLES `technology` WRITE;
 /*!40000 ALTER TABLE `technology` DISABLE KEYS */;
-INSERT INTO `technology` VALUES (1,'Todos'),(2,'Anti-Virus'),(3,'Backups'),(4,'Blackberry'),(5,'Citrix'),(6,'Datacenter'),(7,'Mail Routing'),(8,'Live Collaboration'),(9,'Mesajeria'),(10,'Mobile'),(11,'Network'),(12,'Power'),(13,'Remote Access'),(14,'SAN'),(15,'Telecom'),(16,'Unix'),(17,'VMWare'),(18,'Web'),(19,'Windows');
+INSERT INTO `technology` VALUES (1,'All'),(2,'Anti-Virus'),(3,'Backups'),(4,'Blackberry'),(5,'Citrix'),(6,'Datacenter'),(7,'Mail Routing'),(8,'Live Collaboration'),(9,'Messaging'),(10,'Mobile'),(11,'Network'),(12,'Power'),(13,'Remote Access'),(14,'SAN'),(15,'Telecom'),(16,'Unix'),(17,'VMWare'),(18,'Web'),(19,'Windows');
 /*!40000 ALTER TABLE `technology` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1182,7 +1182,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,1,0,'simplerisk','admin','Admin','user@example.com','sAbwTbIFywWKcheyQw9a','$2a$15$7b2601b4979b1ad031b2fuqf1XkeSa4iNxsHK27tq5Va2jLhzkShW','2014-10-13 23:29:56','2017-01-03 23:58:20','all',NULL,1,1,1,1,1,1,1,1,1,1,1,1,1,0,'[\"id\",\"subject\",\"calculated_risk\",\"submission_date\",\"mitigation_planned\",\"management_review\"]');
+INSERT INTO `user` VALUES (1,1,0,'simplerisk','admin','Admin','user@example.com','sAbwTbIFywWKcheyQw9a','$2a$15$7b2601b4979b1ad031b2fuqf1XkeSa4iNxsHK27tq5Va2jLhzkShW','2016-10-24 11:06:24','2017-01-03 23:55:10','all',NULL,1,1,1,1,1,1,1,1,1,1,1,1,1,0,'[\"id\",\"subject\",\"calculated_risk\",\"submission_date\",\"mitigation_planned\",\"management_review\"]');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
