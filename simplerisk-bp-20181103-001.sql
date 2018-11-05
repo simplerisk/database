@@ -631,7 +631,7 @@ DROP TABLE IF EXISTS `file_types`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `file_types` (
   `value` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(1000) NOT NULL,
+  `name` varchar(250) NOT NULL,
   PRIMARY KEY (`value`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
