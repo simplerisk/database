@@ -683,7 +683,7 @@ DROP TABLE IF EXISTS `file_types`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `file_types` (
   `value` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(1000) NOT NULL,
+  `name` varchar(250) NOT NULL,
   PRIMARY KEY (`value`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
@@ -1920,7 +1920,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,1,0,'simplerisk',_binary 'admin','Admin',_binary 'user@example.com','vGGBiKoIuBGKK0ZPkGoj',_binary '$2a$15$a66d1fa00dbda069b6c61uTLPLpB8D6N/gGPIMBnSMeG0GrZRjpDG','2015-07-29 09:17:32','2017-01-05 17:59:57',':1::2::3::4::5::6::7::8::9::10:',1,NULL,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,'[\"id\",\"subject\",\"calculated_risk\",\"submission_date\",\"mitigation_planned\",\"management_review\"]',1,1,1,1,1,1,1,1,1,1,1);
+INSERT INTO `user` VALUES (1,1,0,'simplerisk',_binary 'admin','Admin',_binary 'user@example.com','IvZmLyIEoZiw3qdzNXaJ',_binary '$2a$15$7c345426a10b4ec2c8c77uMHHrMrckFLo0bheQmZNSoRmPU9n2ZWG','2015-07-29 09:17:32','2017-01-05 17:59:57',':1::2::3::4::5::6::7::8::9::10:',1,NULL,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,'[\"id\",\"subject\",\"calculated_risk\",\"submission_date\",\"mitigation_planned\",\"management_review\"]',1,1,1,1,1,1,1,1,1,1,1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
