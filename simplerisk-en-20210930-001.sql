@@ -721,6 +721,30 @@ INSERT INTO `control_priority` VALUES (1,'P0'),(2,'P1'),(3,'P2'),(4,'P3');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `control_type`
+--
+
+DROP TABLE IF EXISTS `control_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `control_type` (
+  `value` int NOT NULL AUTO_INCREMENT,
+  `name` mediumtext NOT NULL,
+  PRIMARY KEY (`value`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `control_type`
+--
+
+LOCK TABLES `control_type` WRITE;
+/*!40000 ALTER TABLE `control_type` DISABLE KEYS */;
+INSERT INTO `control_type` VALUES (1,'Standalone'),(2,'Project'),(3,'Enterprise');
+/*!40000 ALTER TABLE `control_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `custom_risk_model_values`
 --
 
@@ -743,6 +767,31 @@ LOCK TABLES `custom_risk_model_values` WRITE;
 /*!40000 ALTER TABLE `custom_risk_model_values` DISABLE KEYS */;
 INSERT INTO `custom_risk_model_values` VALUES (1,1,0.4),(1,2,0.8),(1,3,1.2),(1,4,1.6),(1,5,2.0),(2,1,0.8),(2,2,1.6),(2,3,2.4),(2,4,3.2),(2,5,4.0),(3,1,1.2),(3,2,2.4),(3,3,3.6),(3,4,4.8),(3,5,6.0),(4,1,1.6),(4,2,3.2),(4,3,4.8),(4,4,6.4),(4,5,8.0),(5,1,2.0),(5,2,4.0),(5,3,6.0),(5,4,8.0),(5,5,10.0);
 /*!40000 ALTER TABLE `custom_risk_model_values` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `data_classification`
+--
+
+DROP TABLE IF EXISTS `data_classification`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `data_classification` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` mediumtext NOT NULL,
+  `order` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `data_classification`
+--
+
+LOCK TABLES `data_classification` WRITE;
+/*!40000 ALTER TABLE `data_classification` DISABLE KEYS */;
+INSERT INTO `data_classification` VALUES (1,'Public',1),(2,'Internal',2),(3,'Confidential',3),(4,'Restricted',4);
+/*!40000 ALTER TABLE `data_classification` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -792,6 +841,7 @@ CREATE TABLE `document_exceptions` (
   `justification` blob NOT NULL,
   `file_id` int NOT NULL,
   `associated_risks` text NOT NULL,
+  `status` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`value`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -803,6 +853,30 @@ CREATE TABLE `document_exceptions` (
 LOCK TABLES `document_exceptions` WRITE;
 /*!40000 ALTER TABLE `document_exceptions` DISABLE KEYS */;
 /*!40000 ALTER TABLE `document_exceptions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `document_exceptions_status`
+--
+
+DROP TABLE IF EXISTS `document_exceptions_status`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `document_exceptions_status` (
+  `value` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  PRIMARY KEY (`value`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `document_exceptions_status`
+--
+
+LOCK TABLES `document_exceptions_status` WRITE;
+/*!40000 ALTER TABLE `document_exceptions_status` DISABLE KEYS */;
+INSERT INTO `document_exceptions_status` VALUES (1,'Open'),(2,'Closed');
+/*!40000 ALTER TABLE `document_exceptions_status` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1230,6 +1304,30 @@ LOCK TABLES `framework_control_to_framework` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `framework_control_type_mappings`
+--
+
+DROP TABLE IF EXISTS `framework_control_type_mappings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `framework_control_type_mappings` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `control_id` int NOT NULL,
+  `control_type_id` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `framework_control_type_mappings`
+--
+
+LOCK TABLES `framework_control_type_mappings` WRITE;
+/*!40000 ALTER TABLE `framework_control_type_mappings` DISABLE KEYS */;
+/*!40000 ALTER TABLE `framework_control_type_mappings` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `framework_controls`
 --
 
@@ -1249,6 +1347,7 @@ CREATE TABLE `framework_controls` (
   `control_maturity` int NOT NULL DEFAULT '0',
   `desired_maturity` int NOT NULL DEFAULT '0',
   `control_priority` int DEFAULT NULL,
+  `control_status` tinyint(1) DEFAULT '1',
   `family` int DEFAULT NULL,
   `submission_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_audit_date` date DEFAULT NULL,
@@ -1805,6 +1904,10 @@ DROP TABLE IF EXISTS `projects`;
 CREATE TABLE `projects` (
   `value` int NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
+  `due_date` timestamp NULL DEFAULT NULL,
+  `consultant` int DEFAULT NULL,
+  `business_owner` int DEFAULT NULL,
+  `data_classification` int DEFAULT NULL,
   `order` int NOT NULL DEFAULT '999999',
   `status` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`value`)
@@ -2291,7 +2394,7 @@ DROP TABLE IF EXISTS `risks`;
 CREATE TABLE `risks` (
   `id` int NOT NULL AUTO_INCREMENT,
   `status` varchar(20) NOT NULL,
-  `subject` varchar(300) NOT NULL,
+  `subject` longtext NOT NULL,
   `reference_id` varchar(20) NOT NULL DEFAULT '',
   `regulation` int DEFAULT NULL,
   `control_number` varchar(20) DEFAULT NULL,
@@ -2503,7 +2606,7 @@ CREATE TABLE `settings` (
 
 LOCK TABLES `settings` WRITE;
 /*!40000 ALTER TABLE `settings` DISABLE KEYS */;
-INSERT INTO `settings` VALUES ('alert_timeout','5'),('allow_ownermanager_to_risk','1'),('allow_owner_to_risk','1'),('allow_stakeholder_to_risk','1'),('allow_submitter_to_risk','1'),('allow_team_member_to_risk','1'),('auto_verify_new_assets','0'),('backup_auto','true'),('backup_path','/var/www/test.simplerisk.com/www/backup-simplerisk'),('backup_remove','1'),('backup_schedule','daily'),('closed_audit_status','5'),('content_security_policy','0'),('currency','$'),('db_version','20210802-001'),('debug_logging','0'),('debug_log_file','/tmp/debug_log'),('default_asset_valuation','5'),('default_current_maturity','0'),('default_date_format','MM/DD/YYYY'),('default_desired_maturity','3'),('default_language','en'),('default_risk_score','10'),('default_timezone','America/Chicago'),('highcharts_delivery_method','cdn'),('jquery_delivery_method','cdn'),('max_upload_size','5120000'),('NOTIFY_ADDITIONAL_STAKEHOLDERS','true'),('pass_policy_alpha_required','1'),('pass_policy_attempt_lockout','0'),('pass_policy_attempt_lockout_time','10'),('pass_policy_digits_required','1'),('pass_policy_enabled','1'),('pass_policy_lower_required','1'),('pass_policy_max_age','0'),('pass_policy_min_age','0'),('pass_policy_min_chars','8'),('pass_policy_reuse_limit','0'),('pass_policy_re_use_tracking','0'),('pass_policy_special_required','1'),('pass_policy_upper_required','1'),('phpmailer_from_email','noreply@simplerisk.it'),('phpmailer_from_name','SimpleRisk'),('phpmailer_host','smtp1.example.com'),('phpmailer_password','secret'),('phpmailer_port','587'),('phpmailer_prepend','[SIMPLERISK]'),('phpmailer_replyto_email','noreply@simplerisk.it'),('phpmailer_replyto_name','SimpleRisk'),('phpmailer_smtpauth','false'),('phpmailer_smtpautotls','true'),('phpmailer_smtpsecure','none'),('phpmailer_transport','sendmail'),('phpmailer_username','user@example.com'),('plan_projects_show_all','0'),('registration_registered','0'),('risk_appetite','0'),('risk_mapping_required','0'),('risk_model','3'),('session_absolute_timeout','28800'),('session_activity_timeout','3600'),('strict_user_validation','1');
+INSERT INTO `settings` VALUES ('alert_timeout','5'),('allow_ownermanager_to_risk','1'),('allow_owner_to_risk','1'),('allow_stakeholder_to_risk','1'),('allow_submitter_to_risk','1'),('allow_team_member_to_risk','1'),('auto_verify_new_assets','0'),('backup_auto','true'),('backup_path','/var/www/test.simplerisk.com/www/backup-simplerisk'),('backup_remove','1'),('backup_schedule','daily'),('bootstrap_delivery_method','cdn'),('closed_audit_status','5'),('content_security_policy','0'),('currency','$'),('db_version','20210930-001'),('debug_logging','0'),('debug_log_file','/tmp/debug_log'),('default_asset_valuation','5'),('default_current_maturity','0'),('default_date_format','MM/DD/YYYY'),('default_desired_maturity','3'),('default_language','en'),('default_risk_score','10'),('default_timezone','America/Chicago'),('highcharts_delivery_method','cdn'),('jquery_delivery_method','cdn'),('maximum_risk_subject_length','300'),('max_upload_size','5120000'),('NOTIFY_ADDITIONAL_STAKEHOLDERS','true'),('pass_policy_alpha_required','1'),('pass_policy_attempt_lockout','0'),('pass_policy_attempt_lockout_time','10'),('pass_policy_digits_required','1'),('pass_policy_enabled','1'),('pass_policy_lower_required','1'),('pass_policy_max_age','0'),('pass_policy_min_age','0'),('pass_policy_min_chars','8'),('pass_policy_reuse_limit','0'),('pass_policy_re_use_tracking','0'),('pass_policy_special_required','1'),('pass_policy_upper_required','1'),('phpmailer_from_email','noreply@simplerisk.it'),('phpmailer_from_name','SimpleRisk'),('phpmailer_host','smtp1.example.com'),('phpmailer_password','secret'),('phpmailer_port','587'),('phpmailer_prepend','[SIMPLERISK]'),('phpmailer_replyto_email','noreply@simplerisk.it'),('phpmailer_replyto_name','SimpleRisk'),('phpmailer_smtpauth','false'),('phpmailer_smtpautotls','true'),('phpmailer_smtpsecure','none'),('phpmailer_transport','sendmail'),('phpmailer_username','user@example.com'),('plan_projects_show_all','0'),('registration_registered','0'),('risk_appetite','0'),('risk_mapping_required','0'),('risk_model','3'),('session_absolute_timeout','28800'),('session_activity_timeout','3600'),('strict_user_validation','1');
 /*!40000 ALTER TABLE `settings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2793,7 +2896,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,1,0,'simplerisk',_binary 'admin','Admin',_binary 'user@example.com','znMDqRKB735Lm9sp3skE',_binary '$2a$15$c4e6e8db794f2911692a0OOt4QSrHwadbvvIm8r9Hj4ScD2W5xkpO','2016-10-24 11:06:24','2017-01-08 11:55:10',1,NULL,1,1,0,'[\"id\",\"subject\",\"calculated_risk\",\"submission_date\",\"mitigation_planned\",\"management_review\"]',NULL,'{\"risk_colums\":[[\"id\",\"1\"],[\"risk_status\",\"1\"],[\"subject\",\"1\"],[\"calculated_risk\",\"1\"],[\"submission_date\",\"1\"]],\"mitigation_colums\":[[\"mitigation_planned\",\"1\"]],\"review_colums\":[[\"management_review\",\"1\"]]}\n','{\"risk_colums\":[[\"id\",\"1\"],[\"risk_status\",\"1\"],[\"subject\",\"1\"],[\"calculated_risk\",\"1\"],[\"submission_date\",\"1\"]],\"mitigation_colums\":[[\"mitigation_planned\",\"1\"]],\"review_colums\":[[\"management_review\",\"1\"]]}\n','{\"risk_colums\":[[\"id\",\"1\"],[\"risk_status\",\"1\"],[\"subject\",\"1\"],[\"calculated_risk\",\"1\"],[\"days_open\",\"1\"]],\"review_colums\":[[\"management_review\",\"0\"],[\"review_date\",\"0\"],[\"next_step\",\"0\"],[\"next_review_date\",\"1\"],[\"comments\",\"0\"]]}');
+INSERT INTO `user` VALUES (1,1,0,'simplerisk',_binary 'admin','Admin',_binary 'user@example.com','sOsqoG1hKWUr1LdOG7TC',_binary '$2a$15$06b86b5dc646dd446ed96uiRwScXd25RK9wMyrPAsu8hCSyKRbz2a','2016-10-24 11:06:24','2017-01-08 11:55:10',1,NULL,1,1,0,'[\"id\",\"subject\",\"calculated_risk\",\"submission_date\",\"mitigation_planned\",\"management_review\"]',NULL,'{\"risk_colums\":[[\"id\",\"1\"],[\"risk_status\",\"1\"],[\"subject\",\"1\"],[\"calculated_risk\",\"1\"],[\"submission_date\",\"1\"]],\"mitigation_colums\":[[\"mitigation_planned\",\"1\"]],\"review_colums\":[[\"management_review\",\"1\"]]}\n','{\"risk_colums\":[[\"id\",\"1\"],[\"risk_status\",\"1\"],[\"subject\",\"1\"],[\"calculated_risk\",\"1\"],[\"submission_date\",\"1\"]],\"mitigation_colums\":[[\"mitigation_planned\",\"1\"]],\"review_colums\":[[\"management_review\",\"1\"]]}\n','{\"risk_colums\":[[\"id\",\"1\"],[\"risk_status\",\"1\"],[\"subject\",\"1\"],[\"calculated_risk\",\"1\"],[\"days_open\",\"1\"]],\"review_colums\":[[\"management_review\",\"0\"],[\"review_date\",\"0\"],[\"next_step\",\"0\"],[\"next_review_date\",\"1\"],[\"comments\",\"0\"]]}');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2871,6 +2974,36 @@ LOCK TABLES `user_to_team` WRITE;
 /*!40000 ALTER TABLE `user_to_team` DISABLE KEYS */;
 INSERT INTO `user_to_team` VALUES (1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(1,7),(1,8),(1,9),(1,10);
 /*!40000 ALTER TABLE `user_to_team` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `validation_files`
+--
+
+DROP TABLE IF EXISTS `validation_files`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `validation_files` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `mitigation_id` int NOT NULL,
+  `control_id` int NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `type` varchar(30) NOT NULL,
+  `size` int NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `user` int NOT NULL,
+  `content` longblob NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `validation_files`
+--
+
+LOCK TABLES `validation_files` WRITE;
+/*!40000 ALTER TABLE `validation_files` DISABLE KEYS */;
+/*!40000 ALTER TABLE `validation_files` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
