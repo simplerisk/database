@@ -2963,7 +2963,7 @@ CREATE TABLE `user` (
   `role_id` int NOT NULL,
   `lang` varchar(5) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `admin` tinyint(1) NOT NULL DEFAULT '0',
-  `multi_factor` int NOT NULL DEFAULT '1',
+  `multi_factor` int NOT NULL DEFAULT '0',
   `change_password` tinyint NOT NULL DEFAULT '0',
   `custom_display_settings` varchar(1000) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',
   `manager` int DEFAULT NULL,
