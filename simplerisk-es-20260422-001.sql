@@ -3420,7 +3420,7 @@ CREATE TABLE `user` (
   `custom_risks_and_issues_settings` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   `custom_documents_to_controls_display_settings` varchar(2000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT '{"document_columns":[["document_id","0"],["document","1"]],"control_columns":[["control_id","1"]],["control_number","1"],["selected","1"]],"matching_columns":[["score","0"],["tfidf_similarity","0"],["keyword_match","0"],["ai_match","0"],["ai_confidence","0"],["ai_reasoning","0"],["matching","1"],["recommendation","1"]]}',
   PRIMARY KEY (`value`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
